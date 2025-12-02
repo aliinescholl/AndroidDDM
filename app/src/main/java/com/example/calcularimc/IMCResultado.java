@@ -1,6 +1,7 @@
 package com.example.calcularimc;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,11 +32,11 @@ public class IMCResultado extends AppCompatActivity {
         float peso = b.getFloat("peso");
         float altura = b.getFloat("altura");
 
-        float imc = (peso)/(altura * altura);
+        float imc = peso / (altura * altura);
 
         tvPeso.setText(Float.toString(peso));
         tvAltura.setText(Float.toString(altura));
-        tvIMC.setText(Float.toString(imc));
+        tvIMC.setText(String.valueOf(imc));
 
         if(imc < 18.5) {
             imageView.setImageResource(R.drawable.abaixopeso);
