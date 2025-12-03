@@ -18,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        events();
+    }
+
+    public void events() {
         simplePaint = findViewById(R.id.simplePaint);
 
         btnFreeDraw = findViewById(R.id.btnFreeDraw);
@@ -27,25 +31,10 @@ public class MainActivity extends AppCompatActivity {
         btnColor = findViewById(R.id.btnColor);
         btnClear = findViewById(R.id.btnClear);
 
-        btnFreeDraw.setOnClickListener(v -> {
-            simplePaint.setShapeType(SimplePaint.ShapeType.FREE_DRAW);
-            Toast.makeText(this, "Modo: Traço Livre", Toast.LENGTH_SHORT).show();
-        });
-
-        btnLine.setOnClickListener(v -> {
-            simplePaint.setShapeType(SimplePaint.ShapeType.LINE);
-            Toast.makeText(this, "Modo: Linha", Toast.LENGTH_SHORT).show();
-        });
-
-        btnRect.setOnClickListener(v -> {
-            simplePaint.setShapeType(SimplePaint.ShapeType.RECTANGLE);
-            Toast.makeText(this, "Modo: Retângulo", Toast.LENGTH_SHORT).show();
-        });
-
-        btnCircle.setOnClickListener(v -> {
-            simplePaint.setShapeType(SimplePaint.ShapeType.CIRCLE);
-            Toast.makeText(this, "Modo: Círculo", Toast.LENGTH_SHORT).show();
-        });
+        btnFreeDraw.setOnClickListener(v -> {simplePaint.setShapeType(SimplePaint.ShapeType.FREE_DRAW);});
+        btnLine.setOnClickListener(v -> {simplePaint.setShapeType(SimplePaint.ShapeType.LINE);});
+        btnRect.setOnClickListener(v -> {simplePaint.setShapeType(SimplePaint.ShapeType.RECTANGLE);});
+        btnCircle.setOnClickListener(v -> {simplePaint.setShapeType(SimplePaint.ShapeType.CIRCLE);});
 
         btnColor.setOnClickListener(v -> {
             new ColorPickerDialog.Builder(this)
